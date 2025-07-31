@@ -40,6 +40,7 @@ import CodeBlock, { Code as InlineCode } from './formats/code.js';
 import Syntax from './modules/syntax.js';
 import Table from './modules/table.js';
 import Toolbar from './modules/toolbar.js';
+import SharedToolbar from './modules/shared-toolbar.js';
 
 import Icons from './ui/icons.js';
 import Picker from './ui/picker.js';
@@ -102,6 +103,7 @@ Quill.register(
     'modules/syntax': Syntax,
     'modules/table': Table,
     'modules/toolbar': Toolbar,
+    'modules/shared-toolbar': SharedToolbar,
 
     'themes/bubble': BubbleTheme,
     'themes/snow': SnowTheme,
@@ -131,5 +133,6 @@ export type {
   ExpandedQuillOptions,
   QuillOptions,
 };
+export { SharedToolbar };
 
 export default Quill;

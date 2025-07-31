@@ -241,3 +241,16 @@ const quill = new Quill('#editor', {
 const toolbar = quill.getModule('toolbar');
 toolbar.addHandler('image', showImageUI);
 ```
+
+## Shared toolbar across editors
+
+Multiple Quill instances can share a single toolbar using the `SharedToolbar` module. Create your editors without toolbars and then attach `SharedToolbar` to them:
+
+```javascript
+const editor1 = new Quill('#editor1', { modules: { toolbar: false }, theme: 'snow' });
+const editor2 = new Quill('#editor2', { modules: { toolbar: false }, theme: 'snow' });
+
+const shared = new Quill.SharedToolbar([editor1, editor2], { container: '#toolbar' });
+```
+
+The toolbar will act on whichever editor is focused.
